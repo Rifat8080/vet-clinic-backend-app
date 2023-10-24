@@ -14,7 +14,6 @@ VALUES ('Pikachu', '2021-01-07', 15.04, false, 1);
 -- Insert data for Devimon
 INSERT INTO animals (name, date_of_birth, weight_kg, neutered, escape_attempts)
 VALUES ('Devimon', '2017-05-12', 11, true, 5);
-
 -- Insert data for Charmander
 INSERT INTO animals (name, date_of_birth, weight_kg, neutered, escape_attempts, species)
 VALUES ('Charmander', '2020-02-08', -11, false, 0, 'Fire');
