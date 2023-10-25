@@ -216,12 +216,15 @@ ORDER BY v.visit_date
 LIMIT 1;
 
 -- 7. Details for the most recent visit: animal information, vet information, and date of visit.
-SELECT a.name AS animal_name, vet.name AS vet_name, v.visit_date
+-- 1. Who was the last animal seen by William Tatcher?
+SELECT a.name
 FROM animals a
 JOIN visits v ON a.id = v.animal_id
-JOIN vets vet ON v.id = v.vet_id
+JOIN vets vet ON vet.id = v.vet_id
+WHERE vet.name = 'Vet William Tatcher'
 ORDER BY v.visit_date DESC
 LIMIT 1;
+
 
 -- 8. How many visits were with a vet that did not specialize in that animal's species?
 SELECT COUNT(*) AS mismatched_visits
