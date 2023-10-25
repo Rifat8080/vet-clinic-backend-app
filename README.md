@@ -83,7 +83,7 @@ Example commands:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page]((https://github.com/Rifat8080/vet-clinic-backend-app/issues)).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -107,4 +107,4 @@ I would like to thank Microverse and my peers.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](https://github.com/Rifat8080/vet-clinic-backend-app/blob/dev/LICENSE) licensed.
