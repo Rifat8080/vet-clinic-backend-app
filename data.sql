@@ -41,3 +41,22 @@ VALUES ('Blossom', '1998-10-13', 17, true, 3, 'Plant');
 -- Insert data for Ditto
 INSERT INTO animals (name, date_of_birth, weight_kg, neutered, escape_attempts, species)
 VALUES ('Ditto', '2022-05-14', 22, true, 4, 'Normal');
+
+-- Insert data into the owners table
+INSERT INTO owners (full_name, age)
+VALUES ('Sam Smith', 34),
+       ('Jennifer Orwell', 19),
+       ('Bob', 45),
+       ('Melody Pond', 77),
+       ('Dean Winchester', 14),
+       ('Jodie Whittaker', 38);
+-- Insert data into the species table
+INSERT INTO species (name)
+VALUES ('Pokemon'),
+       ('Digimon');
+-- Update the "species_id" based on the name of the animals
+UPDATE animals
+SET species_id = CASE
+    WHEN name LIKE '%mon' THEN (SELECT id FROM species WHERE name = 'Digimon')
+    ELSE (SELECT id FROM species WHERE name = 'Pokemon')
+END;
