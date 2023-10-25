@@ -45,3 +45,25 @@ ADD COLUMN species_id INT REFERENCES species(id);
 -- Add the "owner_id" column as a foreign key referencing the "owners" table
 ALTER TABLE animals
 ADD COLUMN owner_id INT REFERENCES owners(id);
+
+CREATE TABLE vets (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    age INT,
+    date_of_graduation DATE
+);
+CREATE TABLE specializations (
+    vet_id INT REFERENCES vets(id),
+    species_id INT REFERENCES species(id),
+    PRIMARY KEY (vet_id, species_id)
+);
+
+-- Add a unique constraint to the "animals" table
+ALTER TABLE animals
+ADD CONSTRAINT animals_id_unique UNIQUE (id);
+CREATE TABLE visits (
+    animal_id INT REFERENCES animals(id),
+    vet_id INT REFERENCES vets(id),
+    visit_date DATE,
+    PRIMARY KEY (animal_id, vet_id, visit_date)
+);
